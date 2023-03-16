@@ -37,8 +37,9 @@ public class ManagerTest {
         String[] actual = man.getFilms();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void reversedFilmsTen() {
+    public void reversedFilms() {
         man.save(title1);
         man.save(title2);
         man.save(title3);
@@ -53,6 +54,28 @@ public class ManagerTest {
         man.save(title12);
 
         man.findAll();
+
+        String[] expected = {title12, title11, title10, title9, title8, title7, title6, title5, title4, title3, title2, title1};
+        String[] actual = man.getFilms();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void reverserFilmsTen() {
+        man.save(title1);
+        man.save(title2);
+        man.save(title3);
+        man.save(title4);
+        man.save(title5);
+        man.save(title6);
+        man.save(title7);
+        man.save(title8);
+        man.save(title9);
+        man.save(title10);
+        man.save(title11);
+        man.save(title12);
+
+        man.findLast();
 
         String[] expected = {title12, title11, title10, title9, title8, title7, title6, title5, title4, title3};
         String[] actual = man.getFilms();
@@ -75,7 +98,7 @@ public class ManagerTest {
         man.save(title11);
         man.save(title12);
 
-        man.findAll();
+        man.findLast();
 
         String[] expected = {title12, title11, title10, title9, title8};
         String[] actual = man.getFilms();
