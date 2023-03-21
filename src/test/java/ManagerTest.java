@@ -53,10 +53,9 @@ public class ManagerTest {
         man.save(title11);
         man.save(title12);
 
-        man.findAll();
 
         String[] expected = {title12, title11, title10, title9, title8, title7, title6, title5, title4, title3, title2, title1};
-        String[] actual = man.getFilms();
+        String[] actual = man.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -75,10 +74,9 @@ public class ManagerTest {
         man.save(title11);
         man.save(title12);
 
-        man.findLast();
 
         String[] expected = {title12, title11, title10, title9, title8, title7, title6, title5, title4, title3};
-        String[] actual = man.getFilms();
+        String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -98,10 +96,9 @@ public class ManagerTest {
         man.save(title11);
         man.save(title12);
 
-        man.findLast();
 
         String[] expected = {title12, title11, title10, title9, title8};
-        String[] actual = man.getFilms();
+        String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 }

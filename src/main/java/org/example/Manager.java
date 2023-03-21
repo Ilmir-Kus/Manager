@@ -27,7 +27,7 @@ public class Manager {
         for (int i = 0; i <= all.length - 1; i++) {
             reversed[i] = all[all.length - 1 - i];
         }
-        return films = reversed;
+        return reversed;
     }
     public String[] findLast() {
         String[] all = getFilms();
@@ -35,6 +35,6 @@ public class Manager {
         for (int i = 0; i <= numberFilms - 1; i++) {
             reversed[i] = all[all.length - 1 - i];
         }
-        return films = reversed;
+        return reversed;
     }
 }
