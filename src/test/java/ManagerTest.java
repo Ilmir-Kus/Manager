@@ -60,7 +60,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void reverserFilmsTen() {
+    public void reverserFilmsTenAboveLimit() {
         man.save(title1);
         man.save(title2);
         man.save(title3);
@@ -79,9 +79,43 @@ public class ManagerTest {
         String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void reverserFilmsTen() {
+        man.save(title1);
+        man.save(title2);
+        man.save(title3);
+        man.save(title4);
+        man.save(title5);
+        man.save(title6);
+        man.save(title7);
+        man.save(title8);
+        man.save(title9);
+        man.save(title10);
+
+
+        String[] expected = {title10, title9, title8, title7, title6, title5, title4, title3, title2, title1};
+        String[] actual = man.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void reverserFilmsTenLessLimit() {
+        man.save(title1);
+        man.save(title2);
+        man.save(title3);
+        man.save(title4);
+        man.save(title5);
+        man.save(title6);
+        man.save(title7);
+        man.save(title8);
+
+
+        String[] expected = {title8, title7, title6, title5, title4, title3, title2, title1};
+        String[] actual = man.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
 
     @Test
-    public void reverserFilmsFive() {
+    public void reverserFilmsFiveAboveLimit() {
         Manager man = new Manager(5);
         man.save(title1);
         man.save(title2);
@@ -98,6 +132,33 @@ public class ManagerTest {
 
 
         String[] expected = {title12, title11, title10, title9, title8};
+        String[] actual = man.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void reverserFilmsFive() {
+        Manager man = new Manager(5);
+        man.save(title1);
+        man.save(title2);
+        man.save(title3);
+        man.save(title4);
+        man.save(title5);
+
+
+        String[] expected = {title5, title4, title3, title2, title1};
+        String[] actual = man.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void reverserFilmsFiveLessLimit() {
+        Manager man = new Manager(5);
+        man.save(title1);
+        man.save(title2);
+        man.save(title3);
+        man.save(title4);
+
+
+        String[] expected = {title4, title3, title2, title1};
         String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
